@@ -1,3 +1,5 @@
+[![](https://badge.imagelayers.io/inspectit/inspectit:latest.svg)](https://imagelayers.io/?images=inspectit/inspectit:latest 'Get your own badge on imagelayers.io')
+
 # Dockerfile for inspectIT APM solution client
 This docker file bundles the client of the open source APM solution [www.inspectit.eu](http://www.inspectit.eu).
 
