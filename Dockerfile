@@ -2,7 +2,7 @@ FROM debian:squeeze
 
 MAINTAINER info.inspectit@novatec-gmbh.de
 
-ENV INSPECTIT_VERSION 1.6.3.68
+ENV INSPECTIT_VERSION 1.6.4.69
 
 RUN apt-get update && apt-get install -y wget unzip libgtk2.0-0 libxtst6 libcanberra-gtk-module xulrunner-1.9.1 \	
         && apt-get clean \
