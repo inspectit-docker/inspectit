@@ -15,7 +15,7 @@ Now you can connect to a [CMR](https://registry.hub.docker.com/u/inspectit/cmr/)
 This container can only be started on linux with X server, boot2docker will not work. In this case you have to get the client from our [download page](http://www.inspectit.eu/download-inspectit/), remember to choose the correct version (Windows, Linux or Mac, 32bit or 64bit).
 
 ## Configuration
-There is nothing to configure. The container accesses the X socket to show the GUI with the X authority of the current user. This should work on most of the linux distributions (tested with Ubuntu 14.04). If you have problems, please create an [issue](https://github.com/inspectIT/docker-CMR/issues/new).
+There is nothing to configure. The container accesses the X socket to show the GUI with the X authority of the current user. This should work on most of the linux distributions (tested with Ubuntu 14.04). If you have problems, please create an [issue](https://github.com/inspectit-docker/inspectit/issues/new).
 
 ### Running a specific version of the client
 The image inspectit/inspectit:latest always refers to the latest beta version of inspectIT. If you want the latest stable build, please use the image inspectit/inspectit:stable. You can also use a numeric version, please see the available tags. 
@@ -30,7 +30,7 @@ $ docker build -t inspectit/inspectit .
 You need a docker installation or the - fantastic - boot2docker if you are on Windows or Mac
 
 ## Issues
-If you have problems with this image or any questions feel free to create an [issue](https://github.com/inspectIT/docker-CMR/issues/new) or leave a comment below.
+If you have problems with this image or any questions feel free to create an [issue](https://github.com/inspectit-docker/inspectit/issues/new) or leave a comment below.
 
 ## Contributions
-If you wan't to contribute to this image, please look at the sources at [github](https://github.com/inspectIT/docker-CMR) and send us a pull request.
+If you wan't to contribute to this image, please look at the sources at [github](https://github.com/inspectit-docker/inspectit) and send us a pull request.
