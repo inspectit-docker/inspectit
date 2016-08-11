@@ -2,7 +2,7 @@ FROM debian:jessie
 
 MAINTAINER info.inspectit@novatec-gmbh.de
 
-ENV INSPECTIT_VERSION 1.6.9.83
+ENV INSPECTIT_VERSION 1.7.1.84-preview
 
 # prepare the needed libs
 RUN apt-get update && apt-get install -y wget unzip libgtk2.0-0 libxtst6 libcanberra-gtk-module \	
