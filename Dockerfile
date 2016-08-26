@@ -1,14 +1,21 @@
-FROM debian:squeeze
+FROM debian:jessie
 
 MAINTAINER info.inspectit@novatec-gmbh.de
 
 ENV INSPECTIT_VERSION 1.6.5.70
 
-RUN apt-get update && apt-get install -y wget unzip libgtk2.0-0 libxtst6 libcanberra-gtk-module xulrunner-1.9.1 \	
-        && apt-get clean \
-        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN wget ftp://ntftp.novatec-gmbh.de/inspectit/releases/RELEASE.${INSPECTIT_VERSION}/inspectit-linux.gtk.x86_64.zip -qO /opt/inspectit.zip \
-	&& unzip /opt/inspectit.zip \
-	&& rm /opt/inspectit.zip
+# prepare the needed libs
+RUN apt-get update && apt-get install -y wget unzip libgtk2.0-0 libxtst6 libcanberra-gtk-module \	
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-CMD /inspectit/inspectIT
+# download the inspectIT 
+RUN wget https://github.com/inspectIT/inspectIT/releases/download/${INSPECTIT_VERSION}/inspectit-linux.gtk.x86_64.zip -qO /opt/inspectit.zip \
+ && unzip /opt/inspectit.zip \
+ && rm /opt/inspectit.zip
+
+# disable showing of welcome screen
+RUN mkdir -p /inspectit/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ \
+ && printf "eclipse.preferences.version=1\nshowIntro=false\n" > /inspectit/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs
+
+CMD cd /inspectit && ./inspectIT
